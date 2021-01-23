@@ -1,3 +1,8 @@
-.container {
-  background-color: green;
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+aside {
+  background-color: grey;
 }
