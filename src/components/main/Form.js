@@ -1,9 +1,16 @@
 import React from "react";
 import "../../styles/Form.scss";
-const Form = () => {
+const Form = (props) => {
+  // lifting to close modal
   const handleFormSubmit = (ev) => {
+    // se cierra pero sigue dando error, mirar como cerrarlo bien
+    props.handleModal();
     ev.preventDefault();
-    console.log(ev.preventDefault(), "default");
+  };
+
+  const handleInput = (ev) => {
+    props.handleInputChange(ev.target.value);
+    console.log("recibes?");
   };
 
   return (
@@ -12,7 +19,14 @@ const Form = () => {
         <label htmlFor="title" className="form__label">
           Título del evento
         </label>
-        <input type="text" name="text" id="title" className="form__input" />
+        <input
+          type="text"
+          name="text"
+          id="title"
+          className="form__input"
+          onChange={handleInput}
+          value={props.textInput}
+        />
 
         <label htmlFor="inicio" className="form__label">
           Hora Inicio
