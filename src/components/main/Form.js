@@ -4,7 +4,7 @@ const Form = (props) => {
   // lifting to close modal
   const handleFormSubmit = (ev) => {
     // se cierra pero sigue dando error, mirar como cerrarlo bien
-    props.handleModal();
+    props.handleCloseModal();
     ev.preventDefault();
   };
 
@@ -38,7 +38,7 @@ const Form = (props) => {
         </label>
         <input type="text" name="text" id="fin" className="form__input" />
         {/* import date hours */}
-        <input type="submit" value="Guardar" className="form__button" />
+        <input type="submit" value="Confirmar" className="form__button" />
       </form>
     </>
   );
