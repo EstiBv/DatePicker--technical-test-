@@ -8,11 +8,12 @@ import Calendar from "./main/Calendar";
 import Aside from "./main/Aside";
 import Footer from "./Footer";
 
-function App() {
+const App = () => {
   // states
   const [active, setActive] = useState(false);
 
   // events
+
   const handleModal = () => {
     setActive(!active);
   };
@@ -32,6 +33,6 @@ function App() {
       <Footer />
     </React.Fragment>
   );
-}
+};
 
 export default App;

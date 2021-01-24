@@ -1,6 +1,6 @@
 import "../styles/Footer.scss";
 
-function Footer() {
+const footer = () => {
   return (
     <nav className="footer">
       <ul className="footer__list">
@@ -22,5 +22,5 @@ function Footer() {
       </ul>
     </nav>
   );
-}
-export default Footer;
+};
+export default footer;
