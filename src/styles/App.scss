@@ -3,6 +3,16 @@
   flex-direction: row;
   justify-content: center;
 }
-aside {
-  background-color: grey;
+article {
+  background-color: var(--ligth);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+// palette
+:root {
+  --dark: #163172;
+  --medium: #1e56a0;
+  --ligth: #d6e4f0;
+  --shadowBasic: #f6f6f6;
+  --basic: #ffffff;
 }

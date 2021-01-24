@@ -1,11 +1,11 @@
 function Aside() {
   return (
-    <aside>
-      <h3>
+    <article>
+      <h3 className="Title">
         Dale a "Fistrum" para que te salga ese pedaso de texto Chiquito en
         estado puro
       </h3>
-    </aside>
+    </article>
   );
 }
 export default Aside;

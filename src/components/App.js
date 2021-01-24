@@ -21,13 +21,13 @@ function App() {
     <React.Fragment>
       <Header />
       <main className="mainContainer">
-        <Aside />
         <Calendar />
         <Modal active={active} handleModal={handleModal}>
           {" "}
           Hello modal
         </Modal>
         <button onClick={handleModal}>Open modal</button>
+        <Aside />
       </main>
       <Footer />
     </React.Fragment>
