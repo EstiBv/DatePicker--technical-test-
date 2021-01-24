@@ -1,0 +1,21 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__label {
+    color: var(--dark);
+    font-weight: bold;
+  }
+  &__input {
+    border: 0.1em solid var(--dark);
+    border-radius: 0.5em;
+  }
+  &__button {
+    margin-top: 1em;
+    background-color: var(--dark);
+    padding: 1.2em;
+    border-radius: 0.5em;
+    border-style: none;
+    color: var(--basic);
+  }
+}

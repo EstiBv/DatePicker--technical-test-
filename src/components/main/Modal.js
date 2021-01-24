@@ -12,12 +12,14 @@ class Modal extends React.Component {
       <Portal>
         {active && (
           <div className="modalWrapper">
+            {" "}
             <div className="modalWindow">
+              {" "}
+              hola
               <button className="modalBtn" onClick={handleModal}>
                 👋🏼
               </button>
               <Form />
-
               <div>{children}</div>
               <div onClick={handleModal} className="modalBack"></div>
             </div>

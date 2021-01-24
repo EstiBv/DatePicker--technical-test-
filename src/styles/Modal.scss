@@ -10,10 +10,10 @@
 }
 .modalWindow {
   position: relative;
-  background-color: #ffffff;
+  background-color: var(--basic);
   border-radius: 1em;
   padding: 3em;
-  box-shadow: 2px 2px 10px rgba($color: #00000042, $alpha: 1);
+  box-shadow: 2px 2px 10px (var(--medium));
 }
 .modalBtn {
   position: absolute;
