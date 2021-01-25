@@ -10,17 +10,22 @@ const Calendar = (props) => {
     props.handleDay(day);
     console.log(day);
   };
-
-  // locale
+  // const handleSelectedDay = (day, { selected }) => {
+  //   props.handleSelectedDay(day, { selected });
+  // };
 
   return (
     <React.Fragment>
       <div className="containerDate"></div>
       <DayPicker
         onDayClick={handleDayClick}
+        // onDayClick={handleSelectedDay}
         selectDay={props.selectDay}
         localeUtils={props.localeUtils}
         locale={props.locale}
+        disabledDays={[new Date(), { daysOfWeek: [0, 6] }]}
+        renderDay={props.renderDay}
+        canChangeMonth={props.canChangeMonth}
       />
     </React.Fragment>
   );
