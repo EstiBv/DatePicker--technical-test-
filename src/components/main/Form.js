@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/Form.scss";
+import PropTypes from "prop-types";
 
 const Form = (props) => {
   // lifting to close modal
@@ -9,22 +10,10 @@ const Form = (props) => {
   };
 
   // let dataAppointments = [];
-  const handleInputName = (ev) => {
+  const handleInputs = (ev) => {
     props.handleInputChange(ev.target.value);
     console.log("¿recibes name?");
-    // let inputValue = dataAppointments.push(ev.target.value);
   };
-
-  const handleInputHourInit = (ev) => {
-    props.handleInputChange(ev.target.value);
-    // props.handleInputHourInit(ev.target.value);
-    console.log(ev, "¿recibes hora 1?");
-  };
-
-  // const handleInputHourEnd = (ev) => {
-  //   props.handleInputChange(ev.target.value);
-  //   console.log("¿recibes hora 2?");
-  // };
 
   return (
     <>
@@ -37,8 +26,8 @@ const Form = (props) => {
           name="text"
           id="title"
           className="form__input"
-          onChange={handleInputName}
-          value={props.textInputName}
+          onChange={handleInputs}
+          value={props.textInput}
         />
 
         <label htmlFor="inicio" className="form__label">
@@ -49,8 +38,8 @@ const Form = (props) => {
           name="text"
           id="inicio"
           className="form__input"
-          onChange={handleInputHourInit}
-          value={props.textInputHourInit}
+          onChange={handleInputs}
+          value={props.textInput}
         />
 
         <label htmlFor="fin" className="form__label">
@@ -61,7 +50,8 @@ const Form = (props) => {
           name="text"
           id="fin"
           className="form__input"
-          // onChange={handleInputHourEnd}
+          onChange={handleInputs}
+          value={props.textInput}
         />
         {/* import date hours */}
         <button type="submit" className="form__button">
@@ -70,6 +60,10 @@ const Form = (props) => {
       </form>
     </>
   );
+};
+
+Form.propTypes = {
+  textInput: PropTypes.string,
 };
 
 export default Form;

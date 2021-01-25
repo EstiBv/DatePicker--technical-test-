@@ -13,7 +13,6 @@ import WindowModal from "./main/WindowModal";
 import Calendar from "./main/Calendar";
 import Appointments from "./main/Appointments";
 import Footer from "./Footer";
-// import Time from "./Time";
 
 // include accesibity for modal, so define element modal import
 Modal.setAppElement("#root");
@@ -24,8 +23,7 @@ const App = () => {
   console.log(appointments);
   const [selectDay, setSelectDay] = useState(undefined);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [textInputName, setTextInputName] = useState("");
-  const [textInputHourInit, setTextInputHourInit] = useState("");
+  const [textInput, setTextInput] = useState("");
   const [locale, setLocale] = useState("es");
 
   // useEffect for render data
@@ -43,27 +41,16 @@ const App = () => {
   const handleModal = () => {
     setModalIsOpen(true);
   };
+  // submit and close Modale
   const handleCloseModal = () => {
     setModalIsOpen(false);
   };
 
-  // set LocalStorage value from inputs text form,
-  //   const handleInputSubmit = () => {
-  //      localStorage.setItem("client", inputValue);
-  // }
-
-  const handleInputChange = (inputNameValue, inputHoursInitValue) => {
-    setTextInputName(inputNameValue);
-    setTextInputHourInit(inputHoursInitValue);
+  const handleInputChange = (inputNameValue) => {
+    setTextInput(inputNameValue);
     console.log("recibo name");
-    // console.log("recibo hora ");
-    localStorage.setItem("client", inputNameValue, inputHoursInitValue);
+    localStorage.setItem("client", inputNameValue);
   };
-
-  // const handleInputHourInit = (inputHourInitValue) => {
-  //   setTextInputHourInit(inputHourInitValue);
-  //   console.log("recibo hora 1");
-  // };
 
   const handleLocale = () => {
     setLocale();
@@ -116,10 +103,8 @@ const App = () => {
           </div>
           <WindowModal
             isOpen={modalIsOpen}
-            textInputName={textInputName}
-            textInputHourInit={textInputHourInit}
+            textInput={textInput}
             handleInputChange={handleInputChange}
-            // handleInputHourInit={handleInputHourInit}
             handleCloseModal={handleCloseModal}
           ></WindowModal>
         </section>

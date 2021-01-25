@@ -1,8 +1,8 @@
 import DayPicker from "react-day-picker";
-
 import "react-day-picker/lib/style.css";
+import PropTypes from "prop-types";
 
-function Appointments(props) {
+const Appointments = (props) => {
   return (
     <article>
       <DayPicker
@@ -13,5 +13,12 @@ function Appointments(props) {
       />
     </article>
   );
-}
+};
+
+Appointments.propTypes = {
+  appointments: PropTypes.array.isRequired,
+  canChangeMonth: PropTypes.bool,
+  renderDay: PropTypes.func,
+};
+
 export default Appointments;
