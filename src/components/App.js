@@ -24,16 +24,17 @@ const App = () => {
   const [selectDay, setSelectDay] = useState(undefined);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [textInput, setTextInput] = useState("");
+  const [hourInitial, setHourInitial] = useState("");
+  const [hourFinal, setHourFinal] = useState("");
   const [locale, setLocale] = useState("es");
 
   // useEffect for render data
-
-  // events
 
   // const handleAppointments = (inputValue) => {
   //   setAppointments();
   // };
 
+  // EVENTS
   const handleDay = (day) => {
     setSelectDay(day.toLocaleDateString());
   };
@@ -41,28 +42,40 @@ const App = () => {
   const handleModal = () => {
     setModalIsOpen(true);
   };
+
   // submit and close Modale
   const handleCloseModal = () => {
     setModalIsOpen(false);
   };
 
+  // form Inputs and set data into LocalStorage
   const handleInputChange = (inputNameValue) => {
     setTextInput(inputNameValue);
     console.log("recibo name");
     localStorage.setItem("client", inputNameValue);
   };
-
-  const handleLocale = () => {
-    setLocale();
-    console.log();
+  const handleInputHoursInitial = (inputHourInitialValue) => {
+    setHourInitial(inputHourInitialValue);
+    console.log(inputHourInitialValue);
+    localStorage.setItem("Hour initial", inputHourInitialValue);
   };
 
-  // data client from json
+  const handleInputFinalHours = (inputFinalHourslValue) => {
+    setHourFinal(inputFinalHourslValue);
+    localStorage.setItem("Final hour", inputFinalHourslValue);
+  };
+
+  // posibility to change local hour inital datapicker
+  const handleLocale = () => {
+    setLocale();
+  };
+
+  // JSON > data client from json
   const datesClients = Dates.map((client) => {
     return client.name;
   });
 
-  // render appointments
+  // RENDER > render appointments second datapicker
   function renderDay(day) {
     const date = day.getDate();
     const appointmentsStyle = {
@@ -78,7 +91,7 @@ const App = () => {
         {datesClients[date] &&
           datesClients[date].map((name, i) => (
             <div key={i} style={appointmentsStyle}>
-              {name} ☑️
+              {name}
             </div>
           ))}
       </div>
@@ -104,7 +117,11 @@ const App = () => {
           <WindowModal
             isOpen={modalIsOpen}
             textInput={textInput}
+            hourInitial={hourInitial}
+            hourFinal={hourFinal}
             handleInputChange={handleInputChange}
+            handleInputHoursInitial={handleInputHoursInitial}
+            handleInputFinalHours={handleInputFinalHours}
             handleCloseModal={handleCloseModal}
           ></WindowModal>
         </section>

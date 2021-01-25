@@ -14,7 +14,11 @@ const WindowModal = (props) => {
         <Form
           handleModal={props.handleModal}
           textInput={props.textInput}
+          hourInitial={props.hourInitial}
+          hourFinal={props.hourFinal}
           handleInputChange={props.handleInputChange}
+          handleInputHoursInitial={props.handleInputHoursInitial}
+          handleInputFinalHours={props.handleInputFinalHours}
         />
         <div>
           <button onClick={handleCloseModal}>Cambiar fecha</button>

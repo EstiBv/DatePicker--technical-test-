@@ -10,50 +10,64 @@ const Form = (props) => {
   };
 
   // let dataAppointments = [];
-  const handleInputs = (ev) => {
+  const handleInputName = (ev) => {
     props.handleInputChange(ev.target.value);
     console.log("¿recibes name?");
+  };
+
+  const handleInitialHour = (ev) => {
+    props.handleInputHoursInitial(ev.target.value);
+    console.log("hora recibida");
+  };
+
+  const handleFinalHour = (ev) => {
+    props.handleInputFinalHours(ev.target.value);
   };
 
   return (
     <>
       <form onSubmit={handleFormSubmit} className="form">
-        <label htmlFor="title" className="form__label">
+        <label htmlFor="name" className="form__label">
           Nombre
         </label>
         <input
           type="text"
           name="text"
-          id="title"
+          id="name"
           className="form__input"
-          onChange={handleInputs}
+          onChange={handleInputName}
           value={props.textInput}
         />
 
-        <label htmlFor="inicio" className="form__label">
+        <label htmlFor="initial" className="form__label">
           Hora Inicio
         </label>
-        <input
-          type="text"
+        <select
           name="text"
-          id="inicio"
+          id="initial"
           className="form__input"
-          onChange={handleInputs}
-          value={props.textInput}
-        />
+          onChange={handleInitialHour}
+        >
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+        </select>
 
-        <label htmlFor="fin" className="form__label">
+        <label htmlFor="final" className="form__label">
           Hora Fin
         </label>
-        <input
-          type="text"
+        <select
           name="text"
-          id="fin"
+          id="final"
           className="form__input"
-          onChange={handleInputs}
-          value={props.textInput}
-        />
-        {/* import date hours */}
+          onChange={handleFinalHour}
+        >
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+        </select>
         <button type="submit" className="form__button">
           Confirmar
         </button>

@@ -11,16 +11,12 @@ const Calendar = (props) => {
     props.handleDay(day);
     console.log(day);
   };
-  // const handleSelectedDay = (day, { selected }) => {
-  //   props.handleSelectedDay(day, { selected });
-  // };
 
   return (
     <React.Fragment>
       <div className="containerDate"></div>
       <DayPicker
         onDayClick={handleDayClick}
-        // onDayClick={handleSelectedDay}
         selectDay={props.selectDay}
         localeUtils={props.localeUtils}
         locale={props.locale}

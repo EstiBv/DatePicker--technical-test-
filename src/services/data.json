@@ -1,15 +1,23 @@
 [
   {
+    "id": "",
+    "name": " ",
+    "day": ""
+  },
+  {
     "id": 1,
-    "name": ["Arturo"]
+    "name": [""],
+    "day": 2
   },
   {
-    "id": 8,
-    "name": ["Paola", "Andrés"]
+    "id": 2,
+    "name": [""],
+    "day": 3
   },
   {
-    "id": 12,
-    "name": ["Sara"]
+    "id": 28,
+    "name": ["Paola", "Andrés"],
+    "day": 4
   },
   {
     "id": 22,
@@ -20,7 +28,23 @@
     "name": ["Paco", "Ana"]
   },
   {
+    "id": 17,
+    "name": ["Juan"]
+  },
+  {
     "id": 26,
     "name": ["Marta"]
+  },
+  {
+    "id": 26,
+    "name": ["Daniel", "Borja"]
+  },
+  {
+    "id": 26,
+    "name": ["Isabel", "Jesús"]
+  },
+  {
+    "id": 31,
+    "name": ["Laura", "Lucía", "Víctor"]
   }
 ]
