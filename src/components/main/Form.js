@@ -68,9 +68,9 @@ const Form = (props) => {
           <option value="12:00">12:00</option>
           <option value="13:00">13:00</option>
         </select>
-        <button type="submit" className="form__button">
+        {/* <button type="submit" className="form__button">
           Confirmar
-        </button>
+        </button> */}
       </form>
     </>
   );

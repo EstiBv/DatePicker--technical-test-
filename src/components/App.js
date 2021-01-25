@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import "../styles/App.scss";
 // dataJson witch appointments
@@ -28,11 +28,10 @@ const App = () => {
   const [hourFinal, setHourFinal] = useState("");
   const [locale, setLocale] = useState("es");
 
-  // useEffect for render data
-
-  // const handleAppointments = (inputValue) => {
-  //   setAppointments();
-  // };
+  // useEffect for render data ¿*?
+  useEffect(() => {
+    setAppointments([Dates]);
+  }, []);
 
   // EVENTS
   const handleDay = (day) => {
@@ -43,26 +42,27 @@ const App = () => {
     setModalIsOpen(true);
   };
 
-  // submit and close Modale
+  // Close Modale and get data from LocalSorage
   const handleCloseModal = () => {
     setModalIsOpen(false);
+    savedAppointments();
   };
 
   // form Inputs and set data into LocalStorage
   const handleInputChange = (inputNameValue) => {
     setTextInput(inputNameValue);
     console.log("recibo name");
-    localStorage.setItem("client", inputNameValue);
+    localStorage.setItem("Client", inputNameValue);
   };
   const handleInputHoursInitial = (inputHourInitialValue) => {
     setHourInitial(inputHourInitialValue);
     console.log(inputHourInitialValue);
-    localStorage.setItem("Hour initial", inputHourInitialValue);
+    localStorage.setItem("hourInitial", inputHourInitialValue);
   };
 
   const handleInputFinalHours = (inputFinalHourslValue) => {
     setHourFinal(inputFinalHourslValue);
-    localStorage.setItem("Final hour", inputFinalHourslValue);
+    localStorage.setItem("finalHour", inputFinalHourslValue);
   };
 
   // posibility to change local hour inital datapicker
@@ -70,10 +70,31 @@ const App = () => {
     setLocale();
   };
 
-  // JSON > data client from json
+  // JSON Get data saved from form and saved into [Dates] > json dates
+  const savedAppointments = () => {
+    let nameClient = localStorage.getItem("Client");
+    let hourInitial = localStorage.getItem("HourInitial");
+    let finalHour = localStorage.getItem("FinalHour");
+    setAppointments(
+      [
+        ...Dates,
+        {
+          nameClient,
+          hourInitial,
+          finalHour,
+        },
+      ]
+      // .push(Dates)
+    );
+
+    console.log(nameClient, hourInitial, finalHour);
+  };
+
+  // mapping dates clients from json for paint in render
   const datesClients = Dates.map((client) => {
     return client.name;
   });
+  console.log(datesClients);
 
   // RENDER > render appointments second datapicker
   function renderDay(day) {
@@ -83,7 +104,11 @@ const App = () => {
       textAlign: "center",
       display: "flex",
       color: "#163172",
+      margin: "4px 0px 4px 0px",
     };
+    const datesSaved = appointments.map((item) => {
+      return item.nameClient;
+    });
 
     return (
       <div>
@@ -91,7 +116,9 @@ const App = () => {
         {datesClients[date] &&
           datesClients[date].map((name, i) => (
             <div key={i} style={appointmentsStyle}>
-              {name}
+              <div>
+                {name} ︎✆ <span>{datesSaved}</span>
+              </div>
             </div>
           ))}
       </div>
@@ -127,7 +154,7 @@ const App = () => {
         </section>
         <Appointments
           appointments={appointments}
-          canChangeMonth={false}
+          canChangeMonth={true}
           className="calendarAppointments"
           renderDay={renderDay}
         />

@@ -1,5 +1,6 @@
 .footer {
   margin-top: 40px;
+
   &__list {
     margin-top: 1em;
     display: flex;
@@ -16,5 +17,9 @@
     transition: all 0.3s ease;
     transform: scale(1.2);
     font-weight: bold;
+  }
+  &__copy {
+    font-size: xx-small;
+    margin-left: 40%;
   }
 }

@@ -5,19 +5,32 @@
   &__label {
     color: var(--dark);
     font-weight: bold;
+    font-size: 14px;
   }
   &__input {
     height: 2em;
-    border: 0.1em solid var(--dark);
+    border: 0.1em solid var(--ligth);
     border-radius: 0.5em;
     margin-bottom: 8px;
+    color: var(--medium);
+    -webkit-filter: drop-shadow(1px 1px 2px var(--ligth));
+    filter: drop-shadow(1px 1px 2px var(--ligth));
   }
-  &__button {
+  &__btn--modal {
     margin-top: 1em;
-    background-color: var(--dark);
+    background-color: var(--medium);
     padding: 1.2em;
     border-radius: 0.5em;
     border-style: none;
     color: var(--basic);
+    margin-left: 35%;
+    -webkit-filter: drop-shadow(1px 1px 2px var(--medium));
+    filter: drop-shadow(1px 1px 2px var(--medium));
+  }
+  &__btn--modal:hover {
+    -webkit-filter: drop-shadow(1px 1px 2px var(--dark));
+    filter: drop-shadow(1px 1px 2px var(--dark));
+    background-color: var(--dark);
+    color: var(--shadowBasic);
   }
 }

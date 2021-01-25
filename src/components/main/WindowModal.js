@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
+import "../../styles/Form.scss";
 import Form from "./Form";
 
 const WindowModal = (props) => {
@@ -21,7 +22,9 @@ const WindowModal = (props) => {
           handleInputFinalHours={props.handleInputFinalHours}
         />
         <div>
-          <button onClick={handleCloseModal}>Cambiar fecha</button>
+          <button onClick={handleCloseModal} className="form__btn--modal">
+            Confirmar
+          </button>
         </div>
       </Modal>
     </div>

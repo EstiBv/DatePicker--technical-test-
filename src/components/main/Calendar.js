@@ -30,7 +30,7 @@ const Calendar = (props) => {
 
 Calendar.propTypes = {
   onDayClick: PropTypes.func,
-  selectDay: PropTypes.object,
+  // selectDay: PropTypes.string,
   locale: PropTypes.string,
   localeUtils: PropTypes.object,
   disabledDays: PropTypes.array,
