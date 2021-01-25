@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import "../styles/App.scss";
+import "../styles/app.scss";
 // dataJson witch appointments
 import Dates from "../services/data.json";
 // library
@@ -39,9 +39,9 @@ const App = () => {
   };
 
   // open modal
-  const handleModal = () => {
-    setModalIsOpen(true);
-  };
+  // const handleModal = () => {
+  //   setModalIsOpen(true);
+  // };
 
   // form Inputs and set data into LocalStorage
   const handleInputChange = (inputNameValue) => {
@@ -134,9 +134,10 @@ const App = () => {
     );
   }
 
+  //  selectDay={selectDay ? (modalIsOpen = true) : null}
   return (
     <React.Fragment>
-      <Header />
+      <Header className="headerContainer" />
       <main className="mainContainer">
         <Calendar
           selectDay={selectDay ? (modalIsOpen = true) : null}
@@ -144,7 +145,7 @@ const App = () => {
           localeUtils={MomentLocaleUtils}
           locale={locale}
           handleLocale={handleLocale}
-          onClick={handleModal}
+          // onClick={handleModal}
         />
         <section>
           {/* <div>
@@ -164,9 +165,10 @@ const App = () => {
           ></WindowModal>
         </section>
         <Schedule
+          localeUtils={MomentLocaleUtils}
+          locale={locale}
           appointments={appointments}
           canChangeMonth={true}
-          className="calendarAppointments"
           renderDay={renderDay}
         />
       </main>

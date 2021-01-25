@@ -1,0 +1,43 @@
+.containerCalendar {
+  flex-direction: row;
+  justify-content: center;
+  box-shadow: 2px 2px 3px var(--dark);
+  border-radius: 2em;
+  margin: 20px 20px 20px 20px;
+  background-color: var(--shadowBasic);
+  &__dayPicker {
+    background-color: var(--medium);
+    color: var(--ligth);
+    box-shadow: 2px 2px 3px var(--dark);
+    border-radius: 2em;
+  }
+  &__text {
+    font-weight: bold;
+    color: var(--dark);
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+.DayPicker-Day--disabled {
+  color: var(--shadowBasic);
+}
+.DayPicker-Day--today {
+  color: var(--secondary);
+}
+.DayPicker-Caption {
+  text-transform: capitalize;
+}
+.DayPicker-wrapper {
+  margin-top: 50px;
+}
+
+@media all and (min-width: 720px) {
+  .containerCalendar {
+    flex-direction: column;
+    justify-content: space-evenly;
+    // &__text {
+    //   flex-direction: row;
+    //   margin-top: 16px;
+    // }
+  }
+}

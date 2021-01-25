@@ -1,46 +1,50 @@
 [
-  {},
-  {
-    "id": 1,
-    "name": [""],
-    "day": 2
-  },
-  {
-    "id": 2,
-    "name": [""],
-    "day": 3
-  },
   {
     "id": 28,
     "name": ["Paola", "Andrés"],
-    "day": 4
+    "hourInitial": "",
+    "finalHour": ""
   },
   {
     "id": 22,
-    "name": ["Maria", "Luis"]
+    "name": ["Maria", "Luis"],
+    "hourInitial": "",
+    "finalHour": ""
   },
   {
     "id": 25,
-    "name": ["Paco", "Ana"]
+    "name": ["Paco", "Ana"],
+    "hourInitial": "",
+    "finalHour": ""
   },
   {
     "id": 17,
-    "name": ["Juan"]
+    "name": ["Juan"],
+    "hourInitial": "",
+    "finalHour": ""
   },
   {
     "id": 26,
-    "name": ["Marta"]
+    "name": ["Marta"],
+    "hourInitial": "",
+    "finalHour": ""
   },
   {
     "id": 26,
-    "name": ["Daniel", "Borja"]
+    "name": ["Daniel", "Borja"],
+    "hourInitial": "",
+    "finalHour": ""
   },
   {
     "id": 26,
-    "name": ["Isabel", "Jesús"]
+    "name": ["Isabel", "Jesús"],
+    "hourInitial": "",
+    "finalHour": ""
   },
   {
     "id": 31,
-    "name": ["Laura", "Lucía", "Víctor"]
+    "name": ["Laura", "Lucía", "Víctor"],
+    "hourInitial": "",
+    "finalHour": ""
   }
 ]

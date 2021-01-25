@@ -1,11 +1,12 @@
 import React from "react";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
-import "../../styles/Form.scss";
+import "../../styles/form.scss";
 import Form from "./Form";
 
 const WindowModal = (props) => {
-  const handleCloseModal = () => {
+  const closeModal = () => {
+    // let close = props.isOpen ? false : null
     props.handleCloseModal();
 
     console.log("close");
@@ -14,10 +15,10 @@ const WindowModal = (props) => {
   console.log(hola, props.isOpen);
 
   return (
-    <div>
+    <div className="none">
       <Modal isOpen={props.isOpen}>
         <Form
-          handleModal={props.handleModal}
+          // handleModal={props.handleModal}
           textInput={props.textInput}
           hourInitial={props.hourInitial}
           hourFinal={props.hourFinal}
@@ -26,7 +27,7 @@ const WindowModal = (props) => {
           handleInputFinalHours={props.handleInputFinalHours}
         />
         <div>
-          <button onClick={handleCloseModal} className="form__btn--modal">
+          <button onClick={closeModal} className="form__btn--modal">
             Confirmar
           </button>
         </div>

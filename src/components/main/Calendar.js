@@ -2,7 +2,8 @@ import React from "react";
 import DayPicker from "react-day-picker";
 import PropTypes from "prop-types";
 import "react-day-picker/lib/style.css";
-import "../../styles/App.scss";
+import "../../styles/app.scss";
+import "../../styles/calendar.scss";
 
 const Calendar = (props) => {
   // lifting : listen day selected
@@ -14,16 +15,23 @@ const Calendar = (props) => {
 
   return (
     <React.Fragment>
-      <div className="containerDate"></div>
-      <DayPicker
-        onDayClick={handleDayClick}
-        selectDay={props.selectDay}
-        localeUtils={props.localeUtils}
-        locale={props.locale}
-        disabledDays={[new Date(), { daysOfWeek: [0, 6] }]}
-        renderDay={props.renderDay}
-        canChangeMonth={props.canChangeMonth}
-      />
+      <div className="containerCalendar">
+        <div>
+          <DayPicker
+            className="containerCalendar__dayPicker"
+            onDayClick={handleDayClick}
+            selectDay={props.selectDay}
+            localeUtils={props.localeUtils}
+            locale={props.locale}
+            disabledDays={[new Date(), { daysOfWeek: [0, 6] }]}
+            renderDay={props.renderDay}
+            canChangeMonth={props.canChangeMonth}
+          />
+        </div>
+        <div>
+          <p className="containerCalendar__text">Selecciona un día </p>
+        </div>
+      </div>
     </React.Fragment>
   );
 };

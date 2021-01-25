@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Form.scss";
+import "../../styles/form.scss";
 import PropTypes from "prop-types";
 
 const Form = (props) => {
@@ -52,6 +52,7 @@ const Form = (props) => {
           <option value="10:00">10:00</option>
           <option value="11:00">11:00</option>
           <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
         </select>
 
         <label htmlFor="final" className="form__label">
@@ -67,6 +68,7 @@ const Form = (props) => {
           <option value="11:00">11:00</option>
           <option value="12:00">12:00</option>
           <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
         </select>
         {/* <button type="submit" className="form__button">
           Confirmar
