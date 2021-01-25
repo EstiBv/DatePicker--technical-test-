@@ -1,0 +1,12 @@
+.containerSchedule {
+  background-color: var(--shadowBasic);
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 2em;
+  // -webkit-filter: drop-shadow(2px 2px 2px var(--dark));
+  box-shadow: 2px 2px 3px var(--dark);
+}
+.schedule {
+  font-size: 12px;
+  // color: red;
+}

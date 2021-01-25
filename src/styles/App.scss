@@ -3,12 +3,7 @@
   flex-direction: row;
   justify-content: center;
 }
-article {
-  background-color: var(--ligth);
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 2em;
-}
+
 // palette
 :root {
   --dark: #163172;
@@ -17,6 +12,19 @@ article {
   --shadowBasic: #f6f6f6;
   --basic: #ffffff;
 }
-// .containerDate {
-//   background-color: var(--ligth);
-// }
+.btn__openModal {
+  background-color: var(--ligth);
+  padding: 1.2em;
+  border-radius: 0.5em;
+  border-style: none;
+  color: var(--medium);
+  -webkit-filter: drop-shadow(1px 1px 2px var(--ligth));
+  filter: drop-shadow(1px 1px 2px var(--ligth));
+}
+.btn__openModal:hover {
+  -webkit-filter: drop-shadow(1px 1px 2px var(--medium));
+  filter: drop-shadow(1px 1px 2px var(--medium));
+  background-color: var(--medium);
+  color: var(--shadowBasic);
+  // font-size: 13px;
+}

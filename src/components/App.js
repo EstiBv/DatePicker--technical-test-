@@ -11,7 +11,7 @@ import "moment/locale/es";
 import Header from "./Header";
 import WindowModal from "./main/WindowModal";
 import Calendar from "./main/Calendar";
-import Appointments from "./main/Appointments";
+import Schedule from "./main/Schedule";
 import Footer from "./Footer";
 
 // include accesibity for modal, so define element modal import
@@ -19,18 +19,18 @@ Modal.setAppElement("#root");
 
 const App = () => {
   // states
-  const [appointments, setAppointments] = useState([Dates]);
+  const [appointments, setAppointments] = useState([]);
   console.log(appointments);
   const [selectDay, setSelectDay] = useState(undefined);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [textInput, setTextInput] = useState("");
   const [hourInitial, setHourInitial] = useState("");
   const [hourFinal, setHourFinal] = useState("");
-  const [locale, setLocale] = useState("es");
+  const [locale, setLocale] = useState("Es");
 
   // useEffect for render data ¿*?
   useEffect(() => {
-    setAppointments([Dates]);
+    setAppointments([]);
   }, []);
 
   // EVENTS
@@ -51,7 +51,7 @@ const App = () => {
   // form Inputs and set data into LocalStorage
   const handleInputChange = (inputNameValue) => {
     setTextInput(inputNameValue);
-    console.log("recibo name");
+    console.log(inputNameValue);
     localStorage.setItem("Client", inputNameValue);
   };
   const handleInputHoursInitial = (inputHourInitialValue) => {
@@ -73,8 +73,8 @@ const App = () => {
   // JSON Get data saved from form and saved into [Dates] > json dates
   const savedAppointments = () => {
     let nameClient = localStorage.getItem("Client");
-    let hourInitial = localStorage.getItem("HourInitial");
-    let finalHour = localStorage.getItem("FinalHour");
+    let hourInitial = localStorage.getItem("hourInitial");
+    let finalHour = localStorage.getItem("finalHour");
     setAppointments(
       [
         ...Dates,
@@ -86,7 +86,6 @@ const App = () => {
       ]
       // .push(Dates)
     );
-
     console.log(nameClient, hourInitial, finalHour);
   };
 
@@ -94,7 +93,6 @@ const App = () => {
   const datesClients = Dates.map((client) => {
     return client.name;
   });
-  console.log(datesClients);
 
   // RENDER > render appointments second datapicker
   function renderDay(day) {
@@ -106,10 +104,17 @@ const App = () => {
       color: "#163172",
       margin: "4px 0px 4px 0px",
     };
-    const datesSaved = appointments.map((item) => {
+
+    const nameSaved = appointments.map((item) => {
       return item.nameClient;
     });
 
+    const initialHourSaved = appointments.map((item) => {
+      return item.hourInitial;
+    });
+    const finalHourSaved = appointments.map((item) => {
+      return item.finalHour;
+    });
     return (
       <div>
         <div>{date}</div>
@@ -117,10 +122,11 @@ const App = () => {
           datesClients[date].map((name, i) => (
             <div key={i} style={appointmentsStyle}>
               <div>
-                {name} ︎✆ <span>{datesSaved}</span>
+                {name} ︎✆ <span>{nameSaved}</span>
               </div>
             </div>
           ))}
+        {initialHourSaved} {finalHourSaved}
       </div>
     );
   }
@@ -139,7 +145,9 @@ const App = () => {
         />
         <section>
           <div>
-            <button onClick={handleModal}>Confirmar abrir modal</button>
+            <button onClick={handleModal} className="btn__openModal">
+              Añadir evento
+            </button>
           </div>
           <WindowModal
             isOpen={modalIsOpen}
@@ -152,7 +160,7 @@ const App = () => {
             handleCloseModal={handleCloseModal}
           ></WindowModal>
         </section>
-        <Appointments
+        <Schedule
           appointments={appointments}
           canChangeMonth={true}
           className="calendarAppointments"

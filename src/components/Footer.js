@@ -7,19 +7,25 @@ const footer = () => {
       <nav className="footer">
         <ul className="footer__list">
           <li>
-            <a href="_#" className="footer__list--link">
-              Home
-            </a>
+            <div>
+              <a href="_#" className="footer__list--link">
+                Inicio
+              </a>
+            </div>
           </li>
           <li>
-            <a href="_#" className="footer__list--link">
-              About us
-            </a>
+            <div>
+              <a href="_#" className="footer__list--link">
+                Proyectos
+              </a>
+            </div>
           </li>
           <li>
-            <a href="_#" className="footer__list--link">
-              Contact
-            </a>
+            <div>
+              <a href="_#" className="footer__list--link">
+                Contacto
+              </a>
+            </div>
           </li>
         </ul>
         <small className="footer__copy">
