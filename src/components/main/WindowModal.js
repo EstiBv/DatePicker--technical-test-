@@ -7,8 +7,12 @@ import Form from "./Form";
 const WindowModal = (props) => {
   const handleCloseModal = () => {
     props.handleCloseModal();
+
     console.log("close");
   };
+  let hola = props.isOpen;
+  console.log(hola, props.isOpen);
+
   return (
     <div>
       <Modal isOpen={props.isOpen}>

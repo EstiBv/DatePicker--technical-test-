@@ -22,13 +22,13 @@ const App = () => {
   const [appointments, setAppointments] = useState([]);
   console.log(appointments);
   const [selectDay, setSelectDay] = useState(undefined);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  let [modalIsOpen, setModalIsOpen] = useState(false);
   const [textInput, setTextInput] = useState("");
   const [hourInitial, setHourInitial] = useState("");
   const [hourFinal, setHourFinal] = useState("");
   const [locale, setLocale] = useState("Es");
 
-  // useEffect for render data ¿*?
+  // useEffect for render data ¿*??
   useEffect(() => {
     setAppointments([]);
   }, []);
@@ -38,14 +38,9 @@ const App = () => {
     setSelectDay(day.toLocaleDateString());
   };
 
+  // open modal
   const handleModal = () => {
     setModalIsOpen(true);
-  };
-
-  // Close Modale and get data from LocalSorage
-  const handleCloseModal = () => {
-    setModalIsOpen(false);
-    savedAppointments();
   };
 
   // form Inputs and set data into LocalStorage
@@ -68,6 +63,14 @@ const App = () => {
   // posibility to change local hour inital datapicker
   const handleLocale = () => {
     setLocale();
+  };
+
+  // close modale and get data from LocalSorage
+  const handleCloseModal = () => {
+    setModalIsOpen(false);
+    savedAppointments();
+    /* le está llegando como indefinido por eso creo que no se cierra*/
+    console.log(setModalIsOpen(false));
   };
 
   // JSON Get data saved from form and saved into [Dates] > json dates
@@ -136,7 +139,7 @@ const App = () => {
       <Header />
       <main className="mainContainer">
         <Calendar
-          selectDay={selectDay}
+          selectDay={selectDay ? (modalIsOpen = true) : null}
           handleDay={handleDay}
           localeUtils={MomentLocaleUtils}
           locale={locale}
@@ -144,11 +147,11 @@ const App = () => {
           onClick={handleModal}
         />
         <section>
-          <div>
+          {/* <div>
             <button onClick={handleModal} className="btn__openModal">
               Añadir evento
             </button>
-          </div>
+          </div> */}
           <WindowModal
             isOpen={modalIsOpen}
             textInput={textInput}
