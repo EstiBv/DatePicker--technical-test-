@@ -88,7 +88,7 @@ const App = () => {
       name: nameClient,
       hourInitial: hourInitial,
       finalHour: finalHour,
-      day: parseInt(day),
+      day: day,
     };
 
     appointments.push(object);
@@ -105,8 +105,6 @@ const App = () => {
     const month = day.getMonth() + 1;
     const year = day.getFullYear();
     const date = clickedDay + "/" + month + "/" + year;
-    console.log(date);
-    console.log(selectDay);
     const appointmentsStyle = {
       fontSize: "0.6em",
       textAlign: "center",
