@@ -28,11 +28,13 @@ const footer = () => {
             </div>
           </li>
         </ul>
-        <small className="footer__copy">
+      </nav>
+      <div className="footer__copy">
+        <small className="footer__copy--signed">
           {" "}
           © Developed by Estíbaliz Barato with ❤︎{" "}
         </small>
-      </nav>
+      </div>
     </Fragment>
   );
 };

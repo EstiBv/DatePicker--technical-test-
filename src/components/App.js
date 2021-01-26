@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+// styles
 import "../styles/app.scss";
 // dataJson witch appointments
 import Dates from "../services/data.json";
@@ -14,34 +15,29 @@ import Calendar from "./main/Calendar";
 import Schedule from "./main/Schedule";
 import Footer from "./Footer";
 
-// include accesibity for modal, so define element modal import
+// include accesibilyty for modal, so define element modal import
 Modal.setAppElement("#root");
 
 const App = () => {
   // states
-  const [appointments, setAppointments] = useState([]);
+  const [appointments, setAppointments] = useState([Dates]);
   console.log(appointments);
   const [selectDay, setSelectDay] = useState(undefined);
-  let [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [textInput, setTextInput] = useState("");
   const [hourInitial, setHourInitial] = useState("");
   const [hourFinal, setHourFinal] = useState("");
   const [locale, setLocale] = useState("Es");
 
   // useEffect for render data ¿*??
-  useEffect(() => {
-    setAppointments([]);
-  }, []);
+  // useEffect(() => {
+  //   setAppointments([]);
+  // }, []);
 
   // EVENTS
   const handleDay = (day) => {
     setSelectDay(day.toLocaleDateString());
   };
-
-  // open modal
-  // const handleModal = () => {
-  //   setModalIsOpen(true);
-  // };
 
   // form Inputs and set data into LocalStorage
   const handleInputChange = (inputNameValue) => {
@@ -65,6 +61,10 @@ const App = () => {
     setLocale();
   };
 
+  // open modal
+  const handleModal = () => {
+    setModalIsOpen(true);
+  };
   // close modale and get data from LocalSorage
   const handleCloseModal = () => {
     setModalIsOpen(false);
@@ -79,23 +79,19 @@ const App = () => {
     let hourInitial = localStorage.getItem("hourInitial");
     let finalHour = localStorage.getItem("finalHour");
     setAppointments(
-      [
-        ...Dates,
-        {
-          nameClient,
-          hourInitial,
-          finalHour,
-        },
-      ]
+      ...Dates,
+      {
+        name: nameClient,
+        hourInitial: hourInitial,
+        finalHour: finalHour,
+      }
+
       // .push(Dates)
     );
     console.log(nameClient, hourInitial, finalHour);
   };
 
   // mapping dates clients from json for paint in render
-  const datesClients = Dates.map((client) => {
-    return client.name;
-  });
 
   // RENDER > render appointments second datapicker
   function renderDay(day) {
@@ -108,28 +104,23 @@ const App = () => {
       margin: "4px 0px 4px 0px",
     };
 
-    const nameSaved = appointments.map((item) => {
-      return item.nameClient;
-    });
+    // console.log(appointments);
 
-    const initialHourSaved = appointments.map((item) => {
-      return item.hourInitial;
-    });
-    const finalHourSaved = appointments.map((item) => {
-      return item.finalHour;
-    });
     return (
       <div>
         <div>{date}</div>
-        {datesClients[date] &&
-          datesClients[date].map((name, i) => (
-            <div key={i} style={appointmentsStyle}>
-              <div>
-                {name} ︎✆ <span>{nameSaved}</span>
+        {appointments[0]
+          .filter((appointment) => appointment.day === date)
+          .map((appointment, i) => {
+            return (
+              <div key={i} style={appointmentsStyle}>
+                <div>
+                  {appointment.name} ︎✆ <span>{appointment.name}</span>
+                  {appointment.hourInitial} {appointment.finalHour} {selectDay}
+                </div>
               </div>
-            </div>
-          ))}
-        {initialHourSaved} {finalHourSaved}
+            );
+          })}
       </div>
     );
   }
@@ -140,19 +131,19 @@ const App = () => {
       <Header className="headerContainer" />
       <main className="mainContainer">
         <Calendar
-          selectDay={selectDay ? (modalIsOpen = true) : null}
+          selectDay={selectDay}
           handleDay={handleDay}
           localeUtils={MomentLocaleUtils}
           locale={locale}
           handleLocale={handleLocale}
-          // onClick={handleModal}
+          onClick={handleModal}
         />
         <section>
-          {/* <div>
+          <div>
             <button onClick={handleModal} className="btn__openModal">
               Añadir evento
             </button>
-          </div> */}
+          </div>
           <WindowModal
             isOpen={modalIsOpen}
             textInput={textInput}

@@ -1,19 +1,20 @@
 [
   {
     "id": 28,
-    "name": ["Paola", "Andrés"],
-    "hourInitial": "",
-    "finalHour": ""
+    "name": "",
+    "hourInitial": 25,
+    "finalHour": 25
   },
   {
     "id": 22,
-    "name": ["Maria", "Luis"],
-    "hourInitial": "",
-    "finalHour": ""
+    "name": "Maria, Luis",
+    "hourInitial": 25,
+    "finalHour": 25,
+    "day": 8
   },
   {
     "id": 25,
-    "name": ["Paco", "Ana"],
+    "name": "Paco Ana",
     "hourInitial": "",
     "finalHour": ""
   },
