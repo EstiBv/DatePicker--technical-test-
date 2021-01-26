@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/form.scss";
+import "../../styles/Form.scss";
 import PropTypes from "prop-types";
 
 const Form = (props) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
-import "../../styles/form.scss";
+import "../../styles/Form.scss";
 import Form from "./Form";
 
 const WindowModal = (props) => {
