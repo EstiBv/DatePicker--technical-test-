@@ -1,50 +1,58 @@
 [
   {
     "id": 28,
-    "name": ["Paola", "Andrés"],
-    "hourInitial": "",
-    "finalHour": ""
+    "name": "",
+    "hourInitial": 25,
+    "finalHour": 25,
+    "day": "10/1/2021"
   },
   {
     "id": 22,
-    "name": ["Maria", "Luis"],
-    "hourInitial": "",
-    "finalHour": ""
+    "name": "Maria, Luis",
+    "hourInitial": 10,
+    "finalHour": 12,
+    "day": "14/1/2021"
   },
   {
     "id": 25,
-    "name": ["Paco", "Ana"],
+    "name": "Paco, Ana",
     "hourInitial": "",
-    "finalHour": ""
+    "finalHour": "",
+    "day": "15/01/2021"
   },
   {
     "id": 17,
-    "name": ["Juan"],
+    "name": "Juan",
     "hourInitial": "",
-    "finalHour": ""
+    "finalHour": "",
+    "day": "19/1/2021"
   },
   {
     "id": 26,
-    "name": ["Marta"],
+    "name": "Marta",
     "hourInitial": "",
-    "finalHour": ""
+    "finalHour": "",
+    "day": "20/1/2021"
   },
   {
     "id": 26,
-    "name": ["Daniel", "Borja"],
+    "name": "Daniel, Borja",
     "hourInitial": "",
-    "finalHour": ""
+    "finalHour": "",
+    "day": "22/1/2021"
   },
   {
     "id": 26,
-    "name": ["Isabel", "Jesús"],
+    "name": "Isabel, Jesús",
     "hourInitial": "",
-    "finalHour": ""
+    "finalHour": "",
+    "day": "30/1/2021"
   },
   {
     "id": 31,
-    "name": ["Laura", "Lucía", "Víctor"],
+    "name": "Laura, Lucía, Víctor",
     "hourInitial": "",
-    "finalHour": ""
+    "finalHour": "",
+    "day": "2/1/2021"
   }
 ]

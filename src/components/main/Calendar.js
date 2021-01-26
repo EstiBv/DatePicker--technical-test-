@@ -10,13 +10,14 @@ const Calendar = (props) => {
 
   const handleDayClick = (day) => {
     props.handleDay(day);
-    console.log(day);
   };
+
+  const daySelected = props.selectDay;
 
   return (
     <React.Fragment>
       <div className="containerCalendar">
-        <div>
+        <div className="containerBackCalendar">
           <DayPicker
             className="containerCalendar__dayPicker"
             onDayClick={handleDayClick}
@@ -28,8 +29,14 @@ const Calendar = (props) => {
             canChangeMonth={props.canChangeMonth}
           />
         </div>
-        <div>
-          <p className="containerCalendar__text">Selecciona un día </p>
+        <div className="containerBackCalendar__texts">
+          <p className="containerBackCalendar__text--selectDay">
+            Selecciona un día{" "}
+          </p>
+          <p className="containerCalendar__text--selectedDay">
+            {" "}
+            {daySelected ? `Has seleccionado ${daySelected}` : ""}
+          </p>
         </div>
       </div>
     </React.Fragment>

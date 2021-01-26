@@ -1,3 +1,22 @@
+.containerBackCalendar {
+  display: flex;
+  flex-direction: column;
+  &__texts {
+    font-weight: bold;
+    color: var(--dark);
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    &--selectDay {
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+    }
+    &----selectedDay {
+      color: var(--secondary);
+    }
+  }
+}
 .containerCalendar {
   flex-direction: row;
   justify-content: center;
@@ -11,13 +30,8 @@
     box-shadow: 2px 2px 3px var(--dark);
     border-radius: 2em;
   }
-  &__text {
-    font-weight: bold;
-    color: var(--dark);
-    text-align: center;
-    margin-top: 10px;
-  }
 }
+
 .DayPicker-Day--disabled {
   color: var(--shadowBasic);
 }
