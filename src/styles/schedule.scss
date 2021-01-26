@@ -9,11 +9,45 @@
   justify-content: center;
 }
 .schedule {
-  width: 400px;
+  width: 60%;
   font-size: 16px;
   font-weight: bold;
-  color: var(--medium);
+  color: var(--dark);
 }
+// .DayPicker-Body {
+//   padding: 30px;
+// }
+
+.DayPicker-Day {
+  display: table-cell;
+  vertical-align: text-top;
+}
+
+.DayPicker {
+  width: 100%;
+}
+
+.DayPicker-Week,
+.DayPicker-WeekdaysRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
 .DayPicker-Body {
-  padding: 30px;
+  display: grid;
+  grid-auto-rows: min-content;
+}
+
+.DayPicker-Caption {
+  align-self: flex-start;
+}
+
+.DayPicker-Month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DayPicker-Weekdays {
+  width: 100%;
 }

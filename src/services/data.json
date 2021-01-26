@@ -4,55 +4,55 @@
     "name": "",
     "hourInitial": 25,
     "finalHour": 25,
-    "day": 10
+    "day": "10/1/2021"
   },
   {
     "id": 22,
     "name": "Maria, Luis",
     "hourInitial": 10,
     "finalHour": 12,
-    "day": 8
+    "day": "14/1/2021"
   },
   {
     "id": 25,
-    "name": "Paco Ana",
+    "name": "Paco, Ana",
     "hourInitial": "",
     "finalHour": "",
-    "day": 15
+    "day": "15/01/2021"
   },
   {
     "id": 17,
-    "name": ["Juan"],
+    "name": "Juan",
     "hourInitial": "",
     "finalHour": "",
-    "day": 19
+    "day": "19/1/2021"
   },
   {
     "id": 26,
-    "name": ["Marta"],
+    "name": "Marta",
     "hourInitial": "",
     "finalHour": "",
-    "day": 22
+    "day": "20/1/2021"
   },
   {
     "id": 26,
-    "name": ["Daniel", "Borja"],
+    "name": "Daniel, Borja",
     "hourInitial": "",
     "finalHour": "",
-    "day": 25
+    "day": "22/1/2021"
   },
   {
     "id": 26,
-    "name": ["Isabel", "Jesús"],
+    "name": "Isabel, Jesús",
     "hourInitial": "",
     "finalHour": "",
-    "day": 26
+    "day": "30/1/2021"
   },
   {
     "id": 31,
-    "name": ["Laura", "Lucía", "Víctor"],
+    "name": "Laura, Lucía, Víctor",
     "hourInitial": "",
     "finalHour": "",
-    "day": 3
+    "day": "2/1/2021"
   }
 ]

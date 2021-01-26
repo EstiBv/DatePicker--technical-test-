@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 // styles
 import "../styles/app.scss";
@@ -39,7 +39,7 @@ const App = () => {
     const selectDayArray = dayString.split("/");
     const chosenDay = selectDayArray[0];
     console.log(chosenDay);
-    localStorage.setItem("day", chosenDay);
+    localStorage.setItem("day", dayString);
     handleModal();
   };
 
@@ -101,11 +101,17 @@ const App = () => {
 
   // RENDER > render appointments second datapicker
   function renderDay(day) {
-    const date = day.getDate();
+    const clickedDay = day.getDate();
+    const month = day.getMonth() + 1;
+    const year = day.getFullYear();
+    const date = clickedDay + "/" + month + "/" + year;
+    console.log(date);
+    console.log(selectDay);
     const appointmentsStyle = {
       fontSize: "0.6em",
       textAlign: "center",
       display: "flex",
+      flexDirection: "column",
       color: "#163172",
       margin: "4px 0px 4px 0px",
     };
@@ -116,7 +122,7 @@ const App = () => {
       <div>
         <div
           style={
-            selectDay && parseInt(selectDay.split("/")[0]) === date
+            selectDay && selectDay === date
               ? {
                   color: "white",
                   backgroundColor: "purple",
@@ -126,7 +132,7 @@ const App = () => {
               : null
           }
         >
-          {date}
+          {clickedDay}
         </div>
         {appointments
           .filter((appointment) => appointment.day === date)
@@ -134,7 +140,7 @@ const App = () => {
             return (
               <div key={i} style={appointmentsStyle}>
                 <div>
-                  ︎✆ <div>{appointment.name}</div>
+                  ︎ <div>✆{appointment.name}</div>
                   <div>
                     {appointment.hourInitial} {appointment.finalHour}{" "}
                   </div>
