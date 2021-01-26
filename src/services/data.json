@@ -3,49 +3,56 @@
     "id": 28,
     "name": "",
     "hourInitial": 25,
-    "finalHour": 25
+    "finalHour": 25,
+    "day": 10
   },
   {
     "id": 22,
     "name": "Maria, Luis",
-    "hourInitial": 25,
-    "finalHour": 25,
+    "hourInitial": 10,
+    "finalHour": 12,
     "day": 8
   },
   {
     "id": 25,
     "name": "Paco Ana",
     "hourInitial": "",
-    "finalHour": ""
+    "finalHour": "",
+    "day": 15
   },
   {
     "id": 17,
     "name": ["Juan"],
     "hourInitial": "",
-    "finalHour": ""
+    "finalHour": "",
+    "day": 19
   },
   {
     "id": 26,
     "name": ["Marta"],
     "hourInitial": "",
-    "finalHour": ""
+    "finalHour": "",
+    "day": 22
   },
   {
     "id": 26,
     "name": ["Daniel", "Borja"],
     "hourInitial": "",
-    "finalHour": ""
+    "finalHour": "",
+    "day": 25
   },
   {
     "id": 26,
     "name": ["Isabel", "Jesús"],
     "hourInitial": "",
-    "finalHour": ""
+    "finalHour": "",
+    "day": 26
   },
   {
     "id": 31,
     "name": ["Laura", "Lucía", "Víctor"],
     "hourInitial": "",
-    "finalHour": ""
+    "finalHour": "",
+    "day": 3
   }
 ]

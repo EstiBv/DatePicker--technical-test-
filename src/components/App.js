@@ -20,8 +20,8 @@ Modal.setAppElement("#root");
 
 const App = () => {
   // states
-  const [appointments, setAppointments] = useState([Dates]);
-  console.log(appointments);
+  //const [appointments, setAppointments] = useState(Dates);
+
   const [selectDay, setSelectDay] = useState(undefined);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [textInput, setTextInput] = useState("");
@@ -29,14 +29,18 @@ const App = () => {
   const [hourFinal, setHourFinal] = useState("");
   const [locale, setLocale] = useState("Es");
 
-  // useEffect for render data ¿*??
-  // useEffect(() => {
-  //   setAppointments([]);
-  // }, []);
+  const appointments = Dates;
 
   // EVENTS
+
   const handleDay = (day) => {
-    setSelectDay(day.toLocaleDateString());
+    const dayString = day.toLocaleDateString();
+    setSelectDay(dayString);
+    const selectDayArray = dayString.split("/");
+    const chosenDay = selectDayArray[0];
+    console.log(chosenDay);
+    localStorage.setItem("day", chosenDay);
+    handleModal();
   };
 
   // form Inputs and set data into LocalStorage
@@ -78,16 +82,18 @@ const App = () => {
     let nameClient = localStorage.getItem("Client");
     let hourInitial = localStorage.getItem("hourInitial");
     let finalHour = localStorage.getItem("finalHour");
-    setAppointments(
-      ...Dates,
-      {
-        name: nameClient,
-        hourInitial: hourInitial,
-        finalHour: finalHour,
-      }
+    let day = localStorage.getItem("day");
 
-      // .push(Dates)
-    );
+    const object = {
+      name: nameClient,
+      hourInitial: hourInitial,
+      finalHour: finalHour,
+      day: parseInt(day),
+    };
+
+    appointments.push(object);
+
+    console.log(appointments);
     console.log(nameClient, hourInitial, finalHour);
   };
 
@@ -108,15 +114,30 @@ const App = () => {
 
     return (
       <div>
-        <div>{date}</div>
-        {appointments[0]
+        <div
+          style={
+            selectDay && parseInt(selectDay.split("/")[0]) === date
+              ? {
+                  color: "white",
+                  backgroundColor: "purple",
+                  borderRadius: "50%",
+                  padding: "4px",
+                }
+              : null
+          }
+        >
+          {date}
+        </div>
+        {appointments
           .filter((appointment) => appointment.day === date)
           .map((appointment, i) => {
             return (
               <div key={i} style={appointmentsStyle}>
                 <div>
-                  {appointment.name} ︎✆ <span>{appointment.name}</span>
-                  {appointment.hourInitial} {appointment.finalHour} {selectDay}
+                  ︎✆ <div>{appointment.name}</div>
+                  <div>
+                    {appointment.hourInitial} {appointment.finalHour}{" "}
+                  </div>
                 </div>
               </div>
             );
@@ -139,11 +160,6 @@ const App = () => {
           onClick={handleModal}
         />
         <section>
-          <div>
-            <button onClick={handleModal} className="btn__openModal">
-              Añadir evento
-            </button>
-          </div>
           <WindowModal
             isOpen={modalIsOpen}
             textInput={textInput}
