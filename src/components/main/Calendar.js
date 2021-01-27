@@ -17,9 +17,9 @@ const Calendar = (props) => {
   return (
     <React.Fragment>
       <div className="containerCalendar">
-        <div className="containerBackCalendar">
+        <div className="containerCalendar__dayPicker">
           <DayPicker
-            className="containerCalendar__dayPicker"
+            className="containerCalendar__dayPicker--component"
             onDayClick={handleDayClick}
             selectDay={props.selectDay}
             localeUtils={props.localeUtils}
@@ -29,11 +29,11 @@ const Calendar = (props) => {
             canChangeMonth={props.canChangeMonth}
           />
         </div>
-        <div className="containerBackCalendar__texts">
-          <p className="containerBackCalendar__text--selectDay">
+        <div className="containerCalendar__texts">
+          <p className="containerCalendar__texts--selectDay">
             Selecciona un día{" "}
           </p>
-          <p className="containerCalendar__text--selectedDay">
+          <p className="containerCalendar__texts--selectedDay">
             {" "}
             {daySelected ? `Has seleccionado ${daySelected}` : ""}
           </p>

@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
 import "../../styles/Form.scss";
+import "../../styles/containerModal.scss";
 import Form from "./Form";
 
 const WindowModal = (props) => {
@@ -15,7 +16,7 @@ const WindowModal = (props) => {
   console.log(hola, props.isOpen);
 
   return (
-    <div className="none">
+    <div className="containerModal">
       <Modal isOpen={props.isOpen}>
         <Form
           // handleModal={props.handleModal}

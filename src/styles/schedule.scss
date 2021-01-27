@@ -1,22 +1,46 @@
 .containerSchedule {
-  background-color: var(--ligth);
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 2em;
-  box-shadow: 2px 2px 3px var(--dark);
+  box-shadow: 2px 2px 3px var(--dark1);
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background: linear-gradient(-45deg, #ff8b8050, #ffbcaf59);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
 }
 .schedule {
   width: 60%;
-  font-size: 16px;
   font-weight: bold;
-  color: var(--dark);
+  font-size: 20px;
+  // color: var(--dark2);
 }
-// .DayPicker-Body {
-//   padding: 30px;
-// }
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 .DayPicker-Day {
   display: table-cell;
@@ -35,6 +59,7 @@
 
 .DayPicker-Body {
   display: grid;
+  grid-auto-rows: -webkit-min-content;
   grid-auto-rows: min-content;
 }
 

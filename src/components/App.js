@@ -106,12 +106,15 @@ const App = () => {
     const year = day.getFullYear();
     const date = clickedDay + "/" + month + "/" + year;
     const appointmentsStyle = {
-      fontSize: "0.6em",
+      fontSize: "14px",
       textAlign: "center",
-      display: "flex",
-      flexDirection: "column",
-      color: "#163172",
-      margin: "4px 0px 4px 0px",
+      // display: "flex",
+      // flexDirection: "column",
+      backgroundColor: "var(--medium2)",
+      boxShadow: "2px 2px 3px var(--dark1)",
+      borderRadius: "5px",
+      // color: "#163172",
+      // margin: "0px 0px 4px 0px",
     };
 
     // console.log(appointments);
@@ -122,25 +125,29 @@ const App = () => {
           style={
             selectDay && selectDay === date
               ? {
-                  color: "white",
-                  backgroundColor: "purple",
+                  fontSize: "x-large",
+                  color: "#e5ffff",
+                  backgroundColor: "var(--dark1)",
                   borderRadius: "50%",
                   padding: "4px",
+                  boxShadow: "2px 2px 3px var(--basicDark)",
                 }
               : null
           }
         >
           {clickedDay}
         </div>
+
         {appointments
           .filter((appointment) => appointment.day === date)
           .map((appointment, i) => {
             return (
               <div key={i} style={appointmentsStyle}>
                 <div>
-                  ︎ <div>✆{appointment.name}</div>
+                  ︎<div>{appointment.name}</div>
                   <div>
-                    {appointment.hourInitial} {appointment.finalHour}{" "}
+                    <sup className="supDay"> ⏳ {appointment.hourInitial} </sup>{" "}
+                    <sup> {appointment.finalHour} </sup>
                   </div>
                 </div>
               </div>
@@ -153,7 +160,9 @@ const App = () => {
   //  selectDay={selectDay ? (modalIsOpen = true) : null}
   return (
     <React.Fragment>
-      <Header className="headerContainer" />
+      <header className="headerContainer">
+        <Header />
+      </header>
       <main className="mainContainer">
         <Calendar
           selectDay={selectDay}
@@ -163,7 +172,7 @@ const App = () => {
           handleLocale={handleLocale}
           onClick={handleModal}
         />
-        <section>
+        <section className="modalContainer">
           <WindowModal
             isOpen={modalIsOpen}
             textInput={textInput}
@@ -183,7 +192,9 @@ const App = () => {
           renderDay={renderDay}
         />
       </main>
-      <Footer />
+      <footer className="containerFooter">
+        <Footer />
+      </footer>
     </React.Fragment>
   );
 };

@@ -1,57 +1,97 @@
-.containerBackCalendar {
-  display: flex;
-  flex-direction: column;
-  &__texts {
-    font-weight: bold;
-    color: var(--dark);
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    &--selectDay {
-      font-weight: bold;
-      text-align: center;
-      margin-top: 10px;
-    }
-    &----selectedDay {
-      color: var(--secondary);
-    }
-  }
-}
 .containerCalendar {
   flex-direction: row;
   justify-content: center;
-  box-shadow: 2px 2px 3px var(--dark);
+  box-shadow: 2px 2px 3px var(--dark1);
   border-radius: 2em;
   margin: 20px 20px 20px 20px;
-  background-color: var(--shadowBasic);
+  background-color: var(--ligth2);
+  background-image: url(../../src/images/1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   &__dayPicker {
-    background-color: var(--medium);
-    color: var(--ligth);
-    box-shadow: 2px 2px 3px var(--dark);
-    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    &--component {
+      color: var(--dark-medium);
+      box-shadow: 2px 2px 3px var(--dark1);
+      border-radius: 2em;
+      background: linear-gradient(
+        -45deg,
+        var(--dark2),
+        var(--medium2),
+        var(--ligth2)
+      );
+      background-size: 400% 400%;
+      -webkit-animation: gradient 15s ease infinite;
+      animation: gradient 15s ease infinite;
+    }
+  }
+  &__texts {
+    background-color: var(--dark1);
+    box-shadow: 2px 2px 3px var(--dark1);
+    border-radius: 1.3em;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    &--selectDay {
+      text-align: center;
+      margin-top: 10px;
+      padding: 10px;
+      font-size: x-large;
+    }
+    &--selectedDay {
+      box-shadow: 2px 2px 3px var(--dark1);
+      border-radius: 0.2em;
+      background-color: var(--medium2);
+      font-weight: bold;
+    }
+  }
+}
+// animation background calendar
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// classes inherited from the component
 .DayPicker-Day--disabled {
-  color: var(--shadowBasic);
+  color: var(--basicMedium);
 }
 .DayPicker-Day--today {
-  color: var(--secondary);
+  color: var(--dark1);
 }
 .DayPicker-Caption {
   text-transform: capitalize;
+  font-size: 18px;
 }
 .DayPicker-wrapper {
   margin-top: 50px;
 }
 
+// mediaqueries
 @media all and (min-width: 720px) {
   .containerCalendar {
     flex-direction: column;
     justify-content: space-evenly;
-    // &__text {
-    //   flex-direction: row;
-    //   margin-top: 16px;
-    // }
   }
 }

@@ -4,7 +4,7 @@ import "../styles/Footer.scss";
 const footer = () => {
   return (
     <Fragment>
-      <nav className="footer">
+      {/* <nav className="footer">
         <ul className="footer__list">
           <li>
             <div>
@@ -28,9 +28,9 @@ const footer = () => {
             </div>
           </li>
         </ul>
-      </nav>
-      <div className="footer__copy">
-        <small className="footer__copy--signed">
+      </nav> */}
+      <div className="containerFooter__copy">
+        <small className="containerFooter--signed">
           {" "}
           © Developed by Estíbaliz Barato with ❤︎{" "}
         </small>
