@@ -1,34 +1,3 @@
-// .footer {
-//   height: 30px;
-//   margin-top: 40px;
-//   background-color: var(--ligth);
-
-//   &__list {
-//     margin-top: 1em;
-//     margin-bottom: 20px;
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-around;
-//     padding: 5px 10px 5px 10px;
-//     list-style: none;
-//     &--link {
-//       text-decoration: none;
-//       color: var(--dark);
-//       cursor: pointer;
-//       font-size: 14px;
-//     }
-//     &--link:hover {
-//       color: var(--shadowBasic);
-//       box-shadow: 2px 2px 3px var(--medium);
-//       background-color: var(--medium);
-//       border-radius: 0.2em;
-//       padding: 2px 5px 2px 5px;
-//       transition: ease 300ms;
-//       font-size: 15px;
-//     }
-//   }
-
-// }
 .containerFooter {
   text-align: center;
 }

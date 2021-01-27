@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import "react-day-picker/lib/style.css";
 import "../../styles/app.scss";
 import "../../styles/calendar.scss";
+import img from "../../images/2.png";
 
 const Calendar = (props) => {
   // lifting : listen day selected
-
   const handleDayClick = (day) => {
     props.handleDay(day);
   };
@@ -37,6 +37,13 @@ const Calendar = (props) => {
             {" "}
             {daySelected ? `Has seleccionado ${daySelected}` : ""}
           </p>
+        </div>
+        <div className="containerCalendar__imgBox">
+          <img
+            src={img}
+            alt="lamp draw"
+            className="containerCalendar__imgBox--img"
+          />
         </div>
       </div>
     </React.Fragment>

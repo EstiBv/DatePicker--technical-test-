@@ -47,6 +47,14 @@
       font-weight: bold;
     }
   }
+  &__imgBox {
+    display: flex;
+    justify-content: center;
+    &--img {
+      margin-top: 25px;
+      height: 100px;
+    }
+  }
 }
 // animation background calendar
 @-webkit-keyframes gradient {

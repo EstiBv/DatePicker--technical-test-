@@ -2,18 +2,12 @@ import React from "react";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
 import "../../styles/Form.scss";
-import "../../styles/containerModal.scss";
 import Form from "./Form";
 
 const WindowModal = (props) => {
   const closeModal = () => {
-    // let close = props.isOpen ? false : null
     props.handleCloseModal();
-
-    console.log("close");
   };
-  let hola = props.isOpen;
-  console.log(hola, props.isOpen);
 
   return (
     <div className="containerModal">

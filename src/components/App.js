@@ -20,8 +20,6 @@ Modal.setAppElement("#root");
 
 const App = () => {
   // states
-  //const [appointments, setAppointments] = useState(Dates);
-
   const [selectDay, setSelectDay] = useState(undefined);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [textInput, setTextInput] = useState("");
@@ -36,22 +34,23 @@ const App = () => {
   const handleDay = (day) => {
     const dayString = day.toLocaleDateString();
     setSelectDay(dayString);
+
     const selectDayArray = dayString.split("/");
+
     const chosenDay = selectDayArray[0];
     console.log(chosenDay);
     localStorage.setItem("day", dayString);
+
     handleModal();
   };
 
   // form Inputs and set data into LocalStorage
   const handleInputChange = (inputNameValue) => {
     setTextInput(inputNameValue);
-    console.log(inputNameValue);
     localStorage.setItem("Client", inputNameValue);
   };
   const handleInputHoursInitial = (inputHourInitialValue) => {
     setHourInitial(inputHourInitialValue);
-    console.log(inputHourInitialValue);
     localStorage.setItem("hourInitial", inputHourInitialValue);
   };
 
@@ -73,8 +72,6 @@ const App = () => {
   const handleCloseModal = () => {
     setModalIsOpen(false);
     savedAppointments();
-    /* le está llegando como indefinido por eso creo que no se cierra*/
-    console.log(setModalIsOpen(false));
   };
 
   // JSON Get data saved from form and saved into [Dates] > json dates
@@ -92,32 +89,25 @@ const App = () => {
     };
 
     appointments.push(object);
-
-    console.log(appointments);
-    console.log(nameClient, hourInitial, finalHour);
   };
-
-  // mapping dates clients from json for paint in render
 
   // RENDER > render appointments second datapicker
   function renderDay(day) {
     const clickedDay = day.getDate();
+    // months array begin to 0
     const month = day.getMonth() + 1;
     const year = day.getFullYear();
     const date = clickedDay + "/" + month + "/" + year;
     const appointmentsStyle = {
       fontSize: "14px",
       textAlign: "center",
-      // display: "flex",
-      // flexDirection: "column",
+      display: "flex",
+      flexDirection: "column",
       backgroundColor: "var(--medium2)",
       boxShadow: "2px 2px 3px var(--dark1)",
       borderRadius: "5px",
-      // color: "#163172",
-      // margin: "0px 0px 4px 0px",
+      marginTop: "2px",
     };
-
-    // console.log(appointments);
 
     return (
       <div>
@@ -157,7 +147,6 @@ const App = () => {
     );
   }
 
-  //  selectDay={selectDay ? (modalIsOpen = true) : null}
   return (
     <React.Fragment>
       <header className="headerContainer">

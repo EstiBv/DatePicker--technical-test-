@@ -12,12 +12,10 @@ const Form = (props) => {
   // let dataAppointments = [];
   const handleInputName = (ev) => {
     props.handleInputChange(ev.target.value);
-    console.log("¿recibes name?");
   };
 
   const handleInitialHour = (ev) => {
     props.handleInputHoursInitial(ev.target.value);
-    console.log("hora recibida");
   };
 
   const handleFinalHour = (ev) => {
@@ -72,9 +70,6 @@ const Form = (props) => {
           <option value="13:00">13:00</option>
           <option value="14:00">14:00</option>
         </select>
-        {/* <button type="submit" className="form__button">
-          Confirmar
-        </button> */}
       </form>
     </>
   );
