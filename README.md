@@ -1,6 +1,6 @@
 # `Prueba Técnica - Social WOW `
 
-`🎟 Reto planteado en el inicio del proceso de selección.`
+`🎟 Reto planteado`
 
 ---
 
@@ -29,15 +29,15 @@
 
 #### ` ⚙️ Objetivos técnicos`
 
-☝Proyecto desarrollado en ReactJs
+☝ Proyecto desarrollado en ReactJs
 
-✌️Vista previa de un calendario actual
+✌️ Vista previa de un calendario actual
 
 🤟 Evento click con ventana modal para añadir citas al calendario
 
 🖖 Incluir formulario en modal con título, hora de inicio y hora final
 
-🖐 Mostrar lista de citas ordenadas por hora de inico
+🖐 Mostrar lista de citas ordenadas por hora de inicio
 
 🆓 Usar librerías consideradas.
 
@@ -80,22 +80,21 @@ El formulario consta de tres inputs:
 - una hora de inicio
 - una hora final.
 
-Al confirmar los datos, la ventana modal desaparece y los datos introducidos se almacenan en el LocalStorage
+Al confirmar los datos, la ventana modal desaparece. Los datos introducidos se almacenan en el LocalStorage
 
-Finalmente se piden recogen esos datos, se suben a un JSON (donde se encuentran añadidos los ejemplos iniciales) y se renderizan en el calendario de eventos, en el día seleccionado.
+Finalmente se recogen esos datos, se suben a un JSON (donde se encuentran añadidos los ejemplos iniciales) y se renderizan en el calendario de eventos, en el día seleccionado.
 
 ##### Librerías
 
 Durante el desarrollo de esta pequeña aplicación web se ha utilizado las siguientes tecnologías:
 
 - Proptypes
-- Librerías
-  - React day picker
-  - React modal
-  - Moment js
-  - Node Sass
-  - Material-ui
-  - Bootstrap
+- React day picker
+- React modal
+- Moment js
+- Node Sass
+- Material-ui
+- Bootstrap
 
 ##### Estructura Interna
 
@@ -132,11 +131,6 @@ Images
 
 He comprendido la importancia de analizar cual es la que mejor se adapta a mis conocimientos actuales. También la complejidad de averiguar cuál es la que presta servicios en relación a lograr los objetivos marcados y sobre todo, comprender su estructura para conseguir adapatarla a las necesidades del proyecto.
 
-⚠️ Sorpresas
-
-- Inicié el proyecto con la librería bigCalendar y decidí recalcular ruta (pues finalmente me resultó bastante compleja)
-- La ventana modal no conseguía cerrarla (resultó ser un error de lógica)
-
 ---
 
 #### `✨Futuras mejoras 🗓 `
@@ -159,6 +153,7 @@ Mejoras en el diseño
 
 - 1 Aplicar un landing inicial en el componente Header.js
 - 2 Añadir más animaciones o transiciones y aumetar el dinamismo
+- 3 Botón cambiar estilos (temas)
 
 ---
 
