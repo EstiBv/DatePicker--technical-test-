@@ -143,10 +143,12 @@ He comprendido la importancia de analizar cual es la que mejor se adapta a mis c
 
 Para mejorar la experiencia del usuario:
 
-- 1 Botón de reset de datos / eliminar cita
+- 1 Botón eliminar cita
 - 2 Opción de cambiar cita
-- 3 Botón de mejora de accesibilidad
-- 4 Añadir otras opciones de calendarios locales
+- 4 Salir de la modal clickando el fondo
+- 5 Botón de mejora de accesibilidad
+- 6 Añadir otras opciones de calendarios locales
+- 7 Ruta para acceso a cita y añadir tareas
 
 Aumentar garantía:
 
