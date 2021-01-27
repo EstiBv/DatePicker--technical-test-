@@ -19,19 +19,26 @@
 
 #### ` 🏁 Objetivos generales`
 
-1️⃣Código documentado
-2️⃣Aplicar buenas prácticas
-3️⃣Implementar testing
+1️⃣ Código documentado
+
+2️⃣ Aplicar buenas prácticas
+
+3️⃣ Implementar testing
 
 ---
 
 #### ` ⚙️ Objetivos técnicos`
 
 ☝Proyecto desarrollado en ReactJs
+
 ✌️Vista previa de un calendario actual
+
 🤟 Evento click con ventana modal para añadir citas al calendario
+
 🖖 Incluir formulario en modal con título, hora de inicio y hora final
+
 🖐 Mostrar lista de citas ordenadas por hora de inico
+
 🆓 Usar librerías consideradas.
 
 ---
@@ -39,8 +46,11 @@
 #### ` 🗺 Mi hoja de ruta`
 
 📝 Estructar pasos y ordenar plan de desarrollo
+
 🕵️‍♀️ Investigación previa sobre implementar calendarios y posibles librerías para React
+
 👩‍💻 Leer docu de librerías y estudiar su manejo
+
 ⚖️ Planteamiento de diferentes opciones y decisión final.
 
 ---
