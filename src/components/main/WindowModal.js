@@ -5,6 +5,7 @@ import "../../styles/Form.scss";
 import Form from "./Form";
 
 const WindowModal = (props) => {
+  // lifting
   const closeModal = () => {
     props.handleCloseModal();
   };

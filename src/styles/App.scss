@@ -16,46 +16,26 @@
   // palette 3
   --primary: ;
 }
-.mainContainer {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
+
 body {
   background-image: url(../../src/images/1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+.mainContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+// container emoji
 .supDay {
   height: 50px;
 }
-// animation background calendar
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
+// mediaqueries
 @media all and (min-width: 720px) {
   .mainContainer {
     flex-direction: row;

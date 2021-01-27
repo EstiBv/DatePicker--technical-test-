@@ -7,11 +7,12 @@ import "../../styles/calendar.scss";
 import img from "../../images/2.png";
 
 const Calendar = (props) => {
-  // lifting : listen day selected
+  // lifting
   const handleDayClick = (day) => {
     props.handleDay(day);
   };
 
+  // props select day for render
   const daySelected = props.selectDay;
 
   return (
@@ -52,7 +53,6 @@ const Calendar = (props) => {
 
 Calendar.propTypes = {
   onDayClick: PropTypes.func,
-  // selectDay: PropTypes.string,
   locale: PropTypes.string,
   localeUtils: PropTypes.object,
   disabledDays: PropTypes.array,

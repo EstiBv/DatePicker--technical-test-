@@ -3,13 +3,11 @@ import "../../styles/Form.scss";
 import PropTypes from "prop-types";
 
 const Form = (props) => {
-  // lifting to close modal
-  const handleFormSubmit = (ev) => {
+  // liftings
+  const handleFormSubmit = () => {
     props.handleCloseModal();
-    ev.preventDefault();
   };
 
-  // let dataAppointments = [];
   const handleInputName = (ev) => {
     props.handleInputChange(ev.target.value);
   };

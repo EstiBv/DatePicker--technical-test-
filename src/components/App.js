@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 // styles
 import "../styles/app.scss";
-// dataJson witch appointments
+// dataJson
 import Dates from "../services/data.json";
-// library
+// libraries
 import Modal from "react-modal";
 import MomentLocaleUtils from "react-day-picker/moment";
 import "moment/locale/es";
@@ -15,7 +15,7 @@ import Calendar from "./main/Calendar";
 import Schedule from "./main/Schedule";
 import Footer from "./Footer";
 
-// include accesibilyty for modal, so define element modal import
+// include access for modal, so define element modal import
 Modal.setAppElement("#root");
 
 const App = () => {
@@ -27,10 +27,11 @@ const App = () => {
   const [hourFinal, setHourFinal] = useState("");
   const [locale, setLocale] = useState("Es");
 
+  // dates from json
   const appointments = Dates;
 
   // EVENTS
-
+  /* 1 -> turn into day a string 2 -> delete slash from string 3 -> select day from calendar | 4 -> set in LocalStorage */
   const handleDay = (day) => {
     const dayString = day.toLocaleDateString();
     setSelectDay(dayString);
@@ -44,7 +45,7 @@ const App = () => {
     handleModal();
   };
 
-  // form Inputs and set data into LocalStorage
+  // Inputs value from the form and set data into LocalStorage
   const handleInputChange = (inputNameValue) => {
     setTextInput(inputNameValue);
     localStorage.setItem("Client", inputNameValue);
@@ -59,12 +60,12 @@ const App = () => {
     localStorage.setItem("finalHour", inputFinalHourslValue);
   };
 
-  // posibility to change local hour inital datapicker
+  // handle to change local hour (change the value at inital state, ej: "it" from italy )
   const handleLocale = () => {
     setLocale();
   };
 
-  // open modal
+  // open modal (initial state is false)
   const handleModal = () => {
     setModalIsOpen(true);
   };
@@ -74,7 +75,8 @@ const App = () => {
     savedAppointments();
   };
 
-  // JSON Get data saved from form and saved into [Dates] > json dates
+  /* JSON  1 -> Get data saved from the form and day selected 
+  2 -> push dates into array Dates (new object into appointments) */
   const savedAppointments = () => {
     let nameClient = localStorage.getItem("Client");
     let hourInitial = localStorage.getItem("hourInitial");
@@ -91,7 +93,7 @@ const App = () => {
     appointments.push(object);
   };
 
-  // RENDER > render appointments second datapicker
+  // RENDER > render appointments on the second date picker
   function renderDay(day) {
     const clickedDay = day.getDate();
     // months array begin to 0
@@ -127,7 +129,7 @@ const App = () => {
         >
           {clickedDay}
         </div>
-
+        {/* filter and mapping Dates and selected day  */}
         {appointments
           .filter((appointment) => appointment.day === date)
           .map((appointment, i) => {
@@ -136,8 +138,8 @@ const App = () => {
                 <div>
                   ︎<div>{appointment.name}</div>
                   <div>
-                    <sup className="supDay"> ⏳ {appointment.hourInitial} </sup>{" "}
-                    <sup> {appointment.finalHour} </sup>
+                    <sup className="supDay"> 🕛 {appointment.hourInitial} </sup>{" "}
+                    <sup className="supDay">➡ {appointment.finalHour} </sup>
                   </div>
                 </div>
               </div>
