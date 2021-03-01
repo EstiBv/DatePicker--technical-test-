@@ -17,7 +17,7 @@ const Landing = () => {
             Añade las citas importante en tu calendario. Escoge un día y
             selecciona el margen horario.{" "}
           </p>
-          <Link>
+          <Link to="/schedule">
             <button className="containerLanding__btnStart">Go</button>
           </Link>
         </article>

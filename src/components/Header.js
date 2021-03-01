@@ -1,11 +1,14 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import "../styles/header.scss";
 class Header extends React.Component {
   render() {
     return (
-      <>
-        <div className="title"></div>
-      </>
+      <Link to="/">
+        <div className="iconHome"></div>
+        <div className="iconHome"></div>
+        <div className="iconHome"></div>
+      </Link>
     );
   }
 }
