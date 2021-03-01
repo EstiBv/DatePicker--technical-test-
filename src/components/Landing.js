@@ -14,7 +14,7 @@ const Landing = () => {
             yourself
           </h1>
           <p className="containerLanding__text">
-            Añade las citas importante en tu calendario. Escoge un día y
+            Añade las citas importantes en tu calendario. Escoge un día y
             selecciona el margen horario.{" "}
           </p>
           <Link to="/schedule">
