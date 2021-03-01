@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+// routes
+import { Route, Switch } from "react-router-dom";
 // styles
 import "../styles/app.scss";
 // dataJson
@@ -14,6 +16,7 @@ import WindowModal from "./main/WindowModal";
 import Calendar from "./main/Calendar";
 import Schedule from "./main/Schedule";
 import Footer from "./Footer";
+import Landing from "./Landing";
 
 // include access for modal, so define element modal import
 Modal.setAppElement("#root");
@@ -151,43 +154,48 @@ const App = () => {
   }
 
   return (
-    <React.Fragment>
-      <header className="headerContainer">
-        <Header />
-      </header>
-      <main className="mainContainer">
-        <Calendar
-          selectDay={selectDay}
-          handleDay={handleDay}
-          localeUtils={MomentLocaleUtils}
-          locale={locale}
-          handleLocale={handleLocale}
-          onClick={handleModal}
-        />
-        <section className="modalContainer">
-          <WindowModal
-            isOpen={modalIsOpen}
-            textInput={textInput}
-            hourInitial={hourInitial}
-            hourFinal={hourFinal}
-            handleInputChange={handleInputChange}
-            handleInputHoursInitial={handleInputHoursInitial}
-            handleInputFinalHours={handleInputFinalHours}
-            handleCloseModal={handleCloseModal}
-          ></WindowModal>
-        </section>
-        <Schedule
-          localeUtils={MomentLocaleUtils}
-          locale={locale}
-          appointments={appointments}
-          canChangeMonth={true}
-          renderDay={renderDay}
-        />
-      </main>
-      <footer className="containerFooter">
-        <Footer />
-      </footer>
-    </React.Fragment>
+    <Switch>
+      <Route exact path="/">
+        <Landing />
+      </Route>
+      <React.Fragment>
+        <header className="headerContainer">
+          <Header />
+        </header>
+        <main className="mainContainer">
+          <Calendar
+            selectDay={selectDay}
+            handleDay={handleDay}
+            localeUtils={MomentLocaleUtils}
+            locale={locale}
+            handleLocale={handleLocale}
+            onClick={handleModal}
+          />
+          <section className="modalContainer">
+            <WindowModal
+              isOpen={modalIsOpen}
+              textInput={textInput}
+              hourInitial={hourInitial}
+              hourFinal={hourFinal}
+              handleInputChange={handleInputChange}
+              handleInputHoursInitial={handleInputHoursInitial}
+              handleInputFinalHours={handleInputFinalHours}
+              handleCloseModal={handleCloseModal}
+            ></WindowModal>
+          </section>
+          <Schedule
+            localeUtils={MomentLocaleUtils}
+            locale={locale}
+            appointments={appointments}
+            canChangeMonth={true}
+            renderDay={renderDay}
+          />
+        </main>
+        <footer className="containerFooter">
+          <Footer />
+        </footer>
+      </React.Fragment>
+    </Switch>
   );
 };
 
