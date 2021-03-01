@@ -1,27 +1,28 @@
 {
   "files": {
-    "main.css": "./static/css/main.48deaf10.chunk.css",
-    "main.js": "./static/js/main.dd86984b.chunk.js",
-    "main.js.map": "./static/js/main.dd86984b.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.862d794e.js",
-    "runtime-main.js.map": "./static/js/runtime-main.862d794e.js.map",
+    "main.css": "./static/css/main.6dea3e71.chunk.css",
+    "main.js": "./static/js/main.393b0e79.chunk.js",
+    "main.js.map": "./static/js/main.393b0e79.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.1c55d5c2.js",
+    "runtime-main.js.map": "./static/js/runtime-main.1c55d5c2.js.map",
     "static/css/2.0440f8c5.chunk.css": "./static/css/2.0440f8c5.chunk.css",
-    "static/js/2.93c94780.chunk.js": "./static/js/2.93c94780.chunk.js",
-    "static/js/2.93c94780.chunk.js.map": "./static/js/2.93c94780.chunk.js.map",
-    "static/js/3.497cbad8.chunk.js": "./static/js/3.497cbad8.chunk.js",
-    "static/js/3.497cbad8.chunk.js.map": "./static/js/3.497cbad8.chunk.js.map",
+    "static/js/2.841abcc6.chunk.js": "./static/js/2.841abcc6.chunk.js",
+    "static/js/2.841abcc6.chunk.js.map": "./static/js/2.841abcc6.chunk.js.map",
+    "static/js/3.d2470ccb.chunk.js": "./static/js/3.d2470ccb.chunk.js",
+    "static/js/3.d2470ccb.chunk.js.map": "./static/js/3.d2470ccb.chunk.js.map",
     "index.html": "./index.html",
     "static/css/2.0440f8c5.chunk.css.map": "./static/css/2.0440f8c5.chunk.css.map",
-    "static/css/main.48deaf10.chunk.css.map": "./static/css/main.48deaf10.chunk.css.map",
-    "static/js/2.93c94780.chunk.js.LICENSE.txt": "./static/js/2.93c94780.chunk.js.LICENSE.txt",
+    "static/css/main.6dea3e71.chunk.css.map": "./static/css/main.6dea3e71.chunk.css.map",
+    "static/js/2.841abcc6.chunk.js.LICENSE.txt": "./static/js/2.841abcc6.chunk.js.LICENSE.txt",
     "static/media/calendar.scss": "./static/media/1.811072ab.png",
-    "static/media/2.ce4c4642.png": "./static/media/2.ce4c4642.png"
+    "static/media/2.ce4c4642.png": "./static/media/2.ce4c4642.png",
+    "static/media/illuSchedule.26dccc7a.svg": "./static/media/illuSchedule.26dccc7a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.862d794e.js",
+    "static/js/runtime-main.1c55d5c2.js",
     "static/css/2.0440f8c5.chunk.css",
-    "static/js/2.93c94780.chunk.js",
-    "static/css/main.48deaf10.chunk.css",
-    "static/js/main.dd86984b.chunk.js"
+    "static/js/2.841abcc6.chunk.js",
+    "static/css/main.6dea3e71.chunk.css",
+    "static/js/main.393b0e79.chunk.js"
   ]
 }
