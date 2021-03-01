@@ -55,17 +55,27 @@
     justify-content: space-evenly;
     &__title {
       font-size: 75px;
-    }
-    &__text {
-      width: 450px;
+      width: 30%;
     }
     &__imgLanding {
-      height: 70%;
+      position: fixed;
+      right: -30px;
+      bottom: 60px;
+      height: 50%;
+      align-self: flex-end;
     }
     &__btnStart {
       font-size: 32px;
       align-self: auto;
       letter-spacing: 1.75px;
+    }
+  }
+}
+@media all and (min-width: 1200px) {
+  .containerLanding {
+    &__imgLanding {
+      height: 70%;
+      right: -40px;
     }
   }
 }
