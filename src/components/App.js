@@ -42,6 +42,7 @@ const App = () => {
     console.log(chosenDay);
     localStorage.setItem("day", dayString);
 
+    // solution close modal
     handleModal();
   };
 
